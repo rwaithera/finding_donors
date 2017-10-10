@@ -13157,23 +13157,10 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>What makes this model a good candidate for the problem, given what you know about the data?</li>
 </ul>
 <p><strong> HINT: </strong></p>
-<p>Structure your answer in the same format as above^, with 4 parts for each of the three models you pick. Please include references with your answer.</p>
+<p>Structure your answer in the same format as above, with 4 parts for each of the three models you pick. Please include references with your answer.</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -13185,8 +13172,8 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <ul>
 <li>SVM is used in text categorization. A document is assigned into predefined categories depending on their text content. Say, language identification of a text.</li>
 <li>SVMs can not only model linear problems but also non-linear boundaries when an appropriate kernel is chosen. They are also robust against overfitting especially in high-dimensional feature spaces.</li>
-<li>SVMs are memory-intensive, are trickier to tune in order to pick the right kernel. They also do not scale well to large datasets. SVMs are also sensitive to noise. A small number of mislabelled examples can dramatically reduce performance.</li>
-<li>The CharityML poblem is a binary classification problem. SVM works well with binary classification problems. SVM also relies on the concept of distance. We already performed one-hot encoding on categorical features and the data as is can me worked on by SVM.</li>
+<li>SVMs do not scale well to large datasets and it takes a lot of time to train and predict data. SVMs are also sensitive to noise. A small number of mislabelled examples can dramatically reduce performance.</li>
+<li>SVMs well models non-linear data. I would like to see how SVM will perform on this dataset. I would also like to see how long it will take for the SVM to train and predict the data we have. </li>
 </ul>
 <p>Random Forests</p>
 <ul>
@@ -14198,12 +14185,11 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Random Forests works by selecting k features of the total m features, and choosing the best split for the root node. The node is  then split into child nodes using the best split. At the next node, choose another k variables at random from all m variables and do the same. The forest is built by repeating the steps oulined n number of times to create n trees.</p>
-<p>When making predictions, the RF uses test features and predicts the outcome using the rules of each randomly created decision tree. The prdicted outcome with the majority votes is considered as the final outocome of the RF algorithm.</p>
+<p>Suppose we randomly select k columns out of m total columns in the dataset. Let us assume that each of the k columns is unique question. Take a column k1 and ask how it determines if an indivual makes at most 50k or more than 50k. We repat the questions with other k-1 columns, in the process forming a decision tree.</p>
+<p>In order to get more accurate predictions, we choose another k columns at random. We then ask questions as explained above and form another decision tree. Repeat the process n times until we form n trees, or random decision trees, hence the name Random Forests.</p>
 <p>References</p>
 <ul>
-<li><a href="http://dataaspirant.com/2017/05/22/random-forest-algorithm-machine-learing/">http://dataaspirant.com/2017/05/22/random-forest-algorithm-machine-learing/</a></li>
-<li><a href="http://blog.citizennet.com/blog/2012/11/10/random-forests-ensembles-and-performance-metrics">http://blog.citizennet.com/blog/2012/11/10/random-forests-ensembles-and-performance-metrics</a></li>
+<li><a href="http://blog.echen.me/2011/03/14/laymans-introduction-to-random-forests/">http://blog.echen.me/2011/03/14/laymans-introduction-to-random-forests/</a></li>
 </ul>
 
 </div>
